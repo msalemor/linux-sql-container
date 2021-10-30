@@ -2,10 +2,10 @@
 
 ## Scenario
 
-- Linux .Net Core 5 container running on AKS using ACI and a subnet
+- Linux .Net Core 5 container running on AKS using ACI and in a subnet
 - VM running SQL (2012 & 2016) on subnet on the same AKS VNET
 
-### Error when connecting
+### Error when connecting to SQL from the POD
 
 - A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) (Microsoft SQL Server, Error: 233)
 
@@ -24,9 +24,10 @@ If you do not update your connection string (or install the server certificate) 
 
 > Reference: https://erikej.github.io/sqlclient/efcore/2020/06/22/sqlclient-2-breaking-changes.html
 
-## TLS on container issue
+## TLS container issue
 
 - By default ```/etc/ssl/openssl.cnf``` is configured to minumum TLS 1.2
+- Only TLS 1.2 will connected will be trusted
 
 ## Dockerfile
 
