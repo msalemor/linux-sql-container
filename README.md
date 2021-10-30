@@ -2,11 +2,12 @@
 
 ## Scenario
 
-- Linux container 
--   .Net Core 5.0 
--   VM running SQL (2012 & 2016)
-- Error when connecting:
-  - A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) (Microsoft SQL Server, Error: 233)
+- Linux .Net Core 5 container running on AKS using ACI and a subnet
+- VM running SQL (2012 & 2016) on subnet on the same AKS VNET
+
+### Error when connecting
+
+- A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: Shared Memory Provider, error: 0 - No process is on the other end of the pipe.) (Microsoft SQL Server, Error: 233)
 
 ## Microsoft.Data.SqlClient issue
 
@@ -22,6 +23,10 @@ If you do not update your connection string (or install the server certificate) 
 
 
 > Reference: https://erikej.github.io/sqlclient/efcore/2020/06/22/sqlclient-2-breaking-changes.html
+
+## TLS on container issue
+
+- By default ```/etc/ssl/openssl.cnf``` is configured to minumum TLS 1.2
 
 ## Dockerfile
 
