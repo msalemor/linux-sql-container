@@ -76,6 +76,6 @@ MinProtocol = TLSv1.0
 CipherString = DEFAULT@SECLEVEL=2
 ```
 
-## Correct Solution
+## Correct solution
 
 The correct solution to this issue is to ensure target SQL Server supports TLS 1.2 protocol by installing all latest updates. If your server supports and is enabled with TLS 1.2, it will be negotiated.
