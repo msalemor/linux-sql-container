@@ -1,4 +1,4 @@
-# Linux container pre-login handshake issue with a SQL VM
+# Linux container pre-login handshake issue connecting to a SQL Server Azure VM
 
 ## Scenario
 
